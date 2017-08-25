@@ -1,0 +1,45 @@
+{% extends "default/index.html.twig" %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('css/form2.css') }}">
+ <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-10">
+
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="active">
+                        <a href="#toutes" data-toggle="tab">Mes annonces sauvegardées</a>
+                    </li>
+                    <li>
+                        <a href="#particuliers" data-toggle="tab">Mes recherches automatiques</a>
+                    </li>
+                    <li>
+                        <a href="#professionnels" data-toggle="tab" >Mes annonces en ligne</a>       
+                    </li>
+                </ul>
+                
+				<div class="tab-content ">
+                    <div id="toutes" class="tab-pane fade in active">
+						{% include "BKPlatformBundle::connexion.html.twig" %}
+                    </div>					
+					
+                    <div id="particuliers" class="tab-pane fade">
+                       
+                    </div>
+					
+                    <div id="professionnels" class="tab-pane fade">
+                        
+                    </div>
+                   
+                </div>
+
+            </div>
+        </div>
+    </div>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+	
+{% endblock body%}

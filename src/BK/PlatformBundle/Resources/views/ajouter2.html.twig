@@ -1,0 +1,127 @@
+{% extends "default/index.html.twig" %}
+
+
+{% block form %}
+
+<div class="well">
+<form class="form-horizontal"  method="POST">
+
+<fieldset>
+
+<!-- Form Name -->
+<legend>Déposer une annonce </legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Categorie">Categorie</label>  
+  <div class="col-md-5">
+  <input id="Categorie" name="Categorie" type="text" placeholder="Choisissez une categorie" class="form-control input-md" required="">
+  <span class="help-block">Veuillez choisir une categorie</span>  
+  </div>
+</div>
+
+<!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">Type d'annonce</label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="Offre" checked="checked">
+      Offre
+    </label>
+	</div>
+  <div class="radio">
+    <label for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="Demande">
+      Demande
+    </label>
+	</div>
+  </div>
+</div>
+
+<!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">Vous êtes un </label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="Particulier" checked="checked">
+      Particulier
+    </label>
+	</div>
+  <div class="radio">
+    <label for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="Professionnel">
+      Professionnel
+    </label>
+	</div>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="_titre_annonce">Titre de l'annonce</label>  
+  <div class="col-md-5">
+  <input id="_titre_annonce" name="_titre_annonce" type="text" placeholder="Titre de votre annonce" class="form-control input-md" required="">
+  <span class="help-block">Veuillez saisir le titre de votre annonce</span>  
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="_texte_annonce">Texte de l'annonce</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="_texte_annonce" name="_texte_annonce" rows="3">Texte de l'annonce
+</textarea>
+  </div>
+</div>
+
+<!-- Appended Input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="_prix">Prix</label>
+  <div class="col-md-4">
+    <div class="input-group">
+      <input id="_prix" name="_prix" class="form-control" placeholder="0000" type="text" required="">
+      <span class="input-group-addon">FCFA</span>
+    </div>
+    <p class="help-block">Veuillez saisir une somme</p>
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="_ville">Ville</label>  
+  <div class="col-md-4">
+  <input id="_ville" name="_ville" type="text" placeholder="Ville" class="form-control input-md" required="">
+  <span class="help-block">Veuillez saisir votre ville</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="_adresse">Adresse</label>  
+  <div class="col-md-8">
+  <input id="_adresse" name="_adresse" type="text" placeholder="Adresse" class="form-control input-md" required="">
+  <span class="help-block">Veuillez saisir votre adresse complète</span>  
+  </div>
+</div>
+
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="_file">Fichier</label>
+  <div class="col-md-4">
+    <input id="_file" name="_file" class="input-file" type="file">
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="_submit"></label>
+  <div class="col-md-4">
+    <button id="_submit" name="_submit" class="btn btn-success">Valider</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+{% endblock form %}

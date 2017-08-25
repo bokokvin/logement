@@ -1,0 +1,36 @@
+
+bk_platform_homepage:
+    path:     /homepage
+    defaults: { _controller: BKPlatformBundle:Gestion:accueil }
+
+bk_platform_ajouter:
+    path:     /ajouter
+    defaults: { _controller: BKPlatformBundle:Gestion:ajouter }
+
+bk_platform_mes_annonces:
+    path:     /mes/annonces
+    defaults: { _controller: BKPlatformBundle:Gestion:mesAnnonces }
+
+bk_platform_offres:
+    path:     /offres
+    defaults: { _controller: BKPlatformBundle:Gestion:offre }
+
+bk_platform_demandes:
+    path:     /demandes
+    defaults: { _controller: BKPlatformBundle:Gestion:demande }
+
+bk_platform_connexion:
+    path:     /connexion
+    defaults: { _controller: BKPlatformBundle:Gestion:connexion }
+
+bk_platform_affich_annonce:
+    path:     /affich_annonce/{id}
+    defaults: { _controller: BKPlatformBundle:Gestion:affichAnnonce }
+
+bk_platform_save:
+    path:     /save/{id}
+    defaults: { _controller: BKPlatformBundle:Gestion:sauverAnnonce }
+
+bk_platform_profil:
+    path:     /profil
+    defaults: { _controller: BKPlatformBundle:Gestion:profil }

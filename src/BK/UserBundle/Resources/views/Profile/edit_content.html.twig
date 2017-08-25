@@ -1,0 +1,47 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends "default/index.html.twig" %}
+
+{% block form %}
+
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+	
+	
+	<!--form name="fos_user_profile_form" method="post" action="/profile/edit" class="fos_user_profile_edit" role="form">
+        <div id="fos_user_profile_form">
+			<div class="form-group">
+				<label class="control-label required" for="fos_user_profile_form_username">Nom d'utilisateur</label>
+				<input type="text" id="fos_user_profile_form_username" name="fos_user_profile_form[username]" required="required" maxlength="180" pattern=".{2,}" class="form-control" value="azerty">
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label required" for="fos_user_profile_form_email">Adresse e-mail</label>
+				<input type="email" id="fos_user_profile_form_email" name="fos_user_profile_form[email]" required="required" class="form-control" value="bokokvin@gmail.com">
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label required" for="fos_user_profile_form_nom">Nom</label>
+				<input type="text" id="fos_user_profile_form_nom" name="fos_user_profile_form[nom]" required="required" class="form-control" value="bokokvin@gmail.com">
+			</div>
+			
+			<div class="form-group has-error">
+				<label class="control-label required" for="fos_user_profile_form_current_password">Mot de passe actuel</label>
+				<input type="password" id="fos_user_profile_form_current_password" name="fos_user_profile_form[current_password]" required="required" class="form-control">
+				
+				<ul class="help-block">
+					<li>Le mot de passe est invalide.</li>
+				</ul>
+			</div>
+			
+			<input type="hidden" id="fos_user_profile_form__token" name="fos_user_profile_form[_token]" class="form-control" value="dgVOU-stp2Agu0SkQGm0sqmZrVaivNcMSNwBQpsd8Kw"></div>
+    <div>
+        <input type="submit" value="Mettre à jour">
+    </div>
+    </form-->
+
+
+{% endblock form %}

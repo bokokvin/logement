@@ -1,0 +1,11 @@
+Hello: Bonjour
+group.edit.submit: 'Mettre à jour le groupe'
+group.show.name: 'Nom du groupe'
+group.new.submit: 'Créer le groupe'
+group.flash.updated: 'Le groupe a été mis à jour.'
+group.flash.created: 'Le groupe a été créé.'
+group.flash.deleted: 'Le groupe a été supprimé.'
+security.login.username: 'Email'
+security.login.password: 'Mot de passe'
+security.login.remember_me: 'Se souvenir de moi'
+security.login.submit: Connexion

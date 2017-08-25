@@ -1,0 +1,160 @@
+{% extends "default/index.html.twig" %}
+
+{% block body %}
+<!--div class="container">
+
+<section class="content-center grid-2-1">
+		<section class="adview flex-item-first">
+		
+			<div >						
+				<img class="img-fluid" src="{{ asset( (tab.image.webPath)  ) }}" >		
+			</div>
+			
+                <span > {{ tab.prix }}</span>
+				<span > {{ tab.ville }}</span>
+				<span > {{ tab.adresse }}</span>
+				<span > {{ tab.texte }}</span>
+            
+        
+		</section >
+		
+		<aside >
+			<div class="box-grey-light" >
+				<p class="title">Gérer votre annonce</p>
+				<div class="row">
+					<a href="#" class="btn btn-block btn-primary "><span class="glyphicon glyphicon-pencil"></span>  Déposer une annonce</a>
+					<a href="#" class="btn btn-block btn-primary "><span class="glyphicon glyphicon-map-marker"></span>  Rechercher autour de moi</a>	
+				</div >
+			</div >
+			
+		</aside >
+		<hr >
+</section >	
+
+</div -->
+
+
+
+
+
+
+
+
+
+
+<div id="main" >
+
+
+		<section id="adview" class="grid-2-1" >
+			<section class="adview block-white flex-item-first">
+				<header class="adview_header clearfix">
+					
+					<h1 class="no-border" itemprop="name">
+						{{ tab.titre }}
+						
+						
+					</h1>
+				</header>
+		
+			<section class="adview_main">
+            
+				<div id="item_image" class="item_image big popin-open trackable" >
+                    
+					<span class="lazyload loaded" style="display:block; width:100%; height:100%;" >	
+						<img itemprop="image" src="{{ asset( (tab.image.webPath)  ) }}" >
+					</span>
+                    
+					<p class="item_imageCaption">{{ tab.titre }}</p>
+					
+				</div>
+		
+            
+		
+			
+			
+
+				<section class="properties lineNegative">
+				
+			  
+
+    
+				<p class="line line_pro" itemprop="availabilityStarts" >Mise en ligne le {{ tab.date|date('d M') }} à {{ tab.date|date('H:i') }}</p>
+				<div class="line line_pro noborder">
+					<p> 
+					<a href="" >
+					
+					{{ tab.getUser.username }}</a>
+					</p>
+				</div>
+    
+ 
+    
+    
+        <div class="line">
+            <h2 class="item_price clearfix" itemprop="price" content="9500">
+                
+                <span class="property">Prix</span>
+                <meta itemprop="priceCurrency" content="EUR">
+                <span class="value">
+                    
+                            {{ tab.prix }}&nbsp;FCFA
+                        
+                    
+                    
+                </span>
+            </h2>
+        </div>
+    
+	
+		<div class="line line_city" itemprop="availableAtOrFrom" >
+			<h2 class="clearfix">
+                <span class="property">
+                    <span class="fl">Ville</span>
+                    
+                        
+                            <button class="button-orange-mobile popin-open trackable large-hidden medium-hidden small-hidden" ><i class="icon-map-marker nomargin"></i></button>
+                        
+                    
+                </span>
+                <span class="value" itemprop="address">{{ tab.ville }}
+                </span>
+                
+                 
+                    
+                
+            </h2>
+		</div>
+	
+    
+	
+	
+		<div class="line properties_description">
+			<p class="property semibold">Description :</p>
+			<p class="value" itemprop="description">{{ tab.texte }}</p>
+			
+		</div>
+
+
+		</section>
+		
+		<footer class="adview_footer mts">
+			
+			
+  
+		</footer>
+	</section>
+
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock body %}

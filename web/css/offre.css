@@ -1,0 +1,231 @@
+#main {
+    position: relative;
+    padding: 20px 0;
+    padding: 2rem 0;
+    background: #fafafa;
+    -webkit-transition: padding,0.3s;
+    -moz-transition: padding,0.3s;
+    transition: padding,0.3s;
+	
+	
+}
+
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+
+.content-center {
+    max-width: 1066px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+[class*="grid-"] {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -1em;
+}
+
+
+#adview .adview {
+    padding: 10px 20px;
+    padding: 1rem 2rem;
+    border: 1px solid #ccc;
+}
+
+.grid-2-1>*:nth-child(odd) {
+    width: -webkit-calc(66.66667% - 1em);
+    width: calc(66.66667% - 1em);
+}
+
+.block-white {
+    background: #fff;
+}
+
+[class*="grid-"]>* {
+    -webkit-box-flex: 0 0 auto;
+    -moz-box-flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    display: block;
+    width: -webkit-calc(100% * 1 / 4 - 1em);
+    width: calc(100% * 1 / 4 - 1em);
+    margin-left: 1em;
+}
+
+.flex-item-first {
+    order: -1;
+}
+
+.clearfix, .line {
+    content: "";
+    display: table;
+    clear: both;
+    border-collapse: collapse;
+}
+
+#adview h1 {
+    margin: 0;
+    font-family: "OpenSansBold",sans-serif;
+}
+
+h1.no-border {
+    padding: 0;
+    border: none;
+}
+
+.item_image.big {
+    float: none;
+    position: relative;
+    height: 455px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.properties {
+    margin-top: 10px;
+    margin-top: 1rem;
+}
+
+
+
+.properties.lineNegative .line_pro {
+    padding: 10px 20px;
+    padding: 1rem 2rem;
+}
+
+
+.properties.lineNegative .line {
+    margin: 0 -20px;
+    margin: 0 -2rem;
+    padding: 0 20px;
+    padding: 0 2rem;
+}
+
+.properties .line_pro {
+    padding: 10px 20px;
+    padding: 1rem 2rem;
+}
+
+.properties .line {
+    position: relative;
+    border-top: 1px solid #ccc;
+    -webkit-transition: all,0.3s;
+    -moz-transition: all,0.3s;
+    transition: all,0.3s;
+    z-index: 1;
+    margin-top: 0;
+}
+
+.properties .line.properties_description {
+    border-bottom: 1px solid #ccc;
+}
+
+.properties .line.properties_description, .properties .line.properties_vacation {
+    padding: 10px 20px;
+    padding: 1rem 2rem;
+}
+
+.line {
+    margin-top: 10px;
+    margin-top: 1rem;
+}
+
+.clear, .line, .row {
+    clear: both;
+}
+
+.properties .line.noborder {
+    padding-top: 0;
+    border: none;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.bold {
+    font-family: "OpenSansBold",sans-serif;
+}
+
+
+#adview .adview_footer {
+    text-align: center;
+    font-size: 12px;
+    font-size: 1.2rem;
+}
+
+#adview .sharer {
+    position: relative;
+    padding: 10px 0;
+    padding: 1rem 0;
+    vertical-align: middle;
+    line-height: 28px;
+}
+
+.link-like.flat-horizontal {
+    display: inline-block;
+    font-family: "OpenSansSemiBold",sans-serif;
+    line-height: inherit;
+    vertical-align: top;
+}
+
+.link-like{
+    color: #369;
+    -webkit-transition: all,0.3s;
+    -moz-transition: all,0.3s;
+    transition: all,0.3s;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.mts {
+    margin-top: 10px;
+}
+
+#adview .sharer_title {
+    display: inline-block;
+    margin-right: 10px;
+    margin-right: 1rem;
+    color: #1a1a1a;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#adview .sharer_social {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.semibold {
+    font-family: "OpenSansSemiBold",sans-serif;
+}
+
+
+.grid-4>.flex-item-double {
+    width: -webkit-calc(100% * 2 / 4 - 1em);
+    width: calc(100% * 2 / 4 - 1em);
+}
+
+.grid-4>* {
+    width: -webkit-calc(100% * 1 / 4 - 1em);
+    width: calc(100% * 1 / 4 - 1em);
+}

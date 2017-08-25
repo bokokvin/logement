@@ -1,0 +1,23 @@
+bk_platform:
+    resource: "@BKPlatformBundle/Resources/config/routing.yml"
+    prefix:   /
+
+_imagine:
+    resource: .
+    type:     imagine
+
+bk_user:
+    resource: "@BKUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+index:
+    pattern:  /
+    defaults: { _controller: BKPlatformBundle:Gestion:accueil }
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

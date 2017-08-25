@@ -1,0 +1,10 @@
+services:
+    bkuser.form.registration:
+        class: BK\UserBundle\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: bk_user_registration }
+
+    bkuser.form.profile:
+        class: BK\UserBundle\Form\ProfileType
+        tags:
+            - { name: form.type, alias: bk_user_profile }

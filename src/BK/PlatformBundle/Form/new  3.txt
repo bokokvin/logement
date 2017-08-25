@@ -1,0 +1,126 @@
+$data = array();
+		$tab = array();
+		$tab2 = array();
+		$i=0;
+		
+		$em = $this->getDoctrine()->getManager();
+		
+		$form = $this->createFormBuilder($data)
+				->add('id', 'text', array(
+							'attr' => array('placeholder' => 'Que recherchez-vous ?'),
+							'label'=> ' ',
+							'required'=>false))
+							
+				->add('categorie', 'choice',  array(
+				'choices' => 
+					array('--Emploi--' => array(
+						'Emploi' => 'Offres d\'emploi', ),
+						
+						'--Vehicules--' => array(
+						'Voitures' => 'Voitures',
+						'Moto' => 'Moto',
+						'Caravaning' => 'Caravaning',
+						'Utilitaires' => 'Utilitaires',
+						'Equipements Auto' => 'Equipements Auto', ),
+						
+						'--Immobilier--' => array(
+						'Location' => 'Location',
+						'Colocation' => 'Colocation',
+						'Ventes immobilières' => 'Ventes immobilières',
+						'Bureaux' => 'Bureaux & Commerce', ),
+						),
+				'placeholder'  => '--Choisissez une categorie--',
+			))
+				
+				->add('rechercher', 'submit')
+				
+		->getForm();
+		
+		if ($request->isMethod('POST')) 
+		{
+        $form->handleRequest($request);
+		$data = $form->getData();		
+		$result  = $this->getDoctrine()->getManager()->getRepository('BKPlatformBundle:Annonce')->findby($data);
+		
+			foreach ($result as $rresult) 
+			{
+				$tab[$i]["id"]         = $rresult->getId();
+				$tab[$i]["titre"]      = $rresult->getTitre();
+				$tab[$i]["texte"]        = $rresult->getTexte();
+				$tab[$i]["prix"]    = $rresult->getPrix();
+				$tab[$i]["ville"]       = $rresult->getVille();
+				$tab[$i]["adresse"] = $rresult->getAdresse();
+				$tab[$i]["image"] = $rresult->getImage();
+				
+				$tab2[$i] = $rresult->getAll();
+				
+				$i++;				
+			}
+			
+	return $this->render('BKPlatformBundle::offres.html.twig',array(
+      'form' => $form->createView(),
+	  'toutes' => $tab
+	  ));
+	  
+	  
+    }
+	
+       
+	   
+	   $toutes=$em->getRepository('BKPlatformBundle:Annonce')->findAll();
+	   
+	   return $this->render('BKPlatformBundle::offres.html.twig',array(
+      'form' => $form->createView(),
+	  'toutes' => $toutes
+	  ));
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <div class="row-fluid">
+	
+    <div class="well">
+       {{ form_start(form, {'attr': {'class': 'form-inline'}}) }}
+
+		{{ form_widget(form.id) }}
+		
+		{{ form_widget(form.categorie) }}
+  
+		{{ form_widget(form.rechercher) }}
+  
+		{{ form_end(form) }}
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="tab-content">
+                    <div id="toutes" class="tab-pane fade in active">
+						{% for t in toutes %}
+                        {{ t.titre }}
+						{% endfor %}
+                    </div>					
+					
+                    <div id="particuliers" class="tab-pane fade">
+                        {% for t in toutes %}
+							{% if t.detenteur == 'Particulier' %}
+								{{ t.titre }}
+							{% endif %}
+						{% endfor %}
+                    </div>
+                    <div id="professionnels" class="tab-pane fade">
+                        {% for t in toutes %}
+							{% if t.detenteur == 'Professionnel' %}
+								{{ t.titre }}
+							{% endif %}
+						{% endfor %}
+                    </div>

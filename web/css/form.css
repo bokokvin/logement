@@ -1,0 +1,17 @@
+
+ 
+@media (min-width: 767px) { 
+.container  div[style]{
+  display: table !important;
+}
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-9, .col-md-10, .col-md-11, .col-md-12 div[style] {
+  display: table-cell ;
+  float: none !important;
+}
+.col-md-6 div[style]{
+  margin-left:60px;
+}
+}
+
+

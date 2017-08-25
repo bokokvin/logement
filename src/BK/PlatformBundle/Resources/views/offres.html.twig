@@ -1,0 +1,162 @@
+{% extends "default/index.html.twig" %}
+
+
+
+{% block form %}
+
+
+
+<div class="well research_form">
+
+<div class="container">
+		<div class="row">
+		<form role="form" method="post">
+			<div class="form-group col-sm-6 box" >
+					{{ form_widget(form.titre) }}
+			</div>
+			
+			<div class="form-group col-sm-3 col-sm-offset-0 box" >
+				{{ form_widget(form.category) }}
+			</div>
+			
+			<div class="form-group col-sm-3 ">
+				<input class="btn btn-block btn-primary" type="submit" />
+			</div>
+			
+			<div class="clearfix"></div>
+			
+			<div class="form-group col-sm-3 ">
+				{{ form_widget(form.ville) }}
+			</div>
+			
+			<div class="clearfix"></div>
+			
+			<div class="form-group col-sm-3 ">
+				{{ form_widget(form.prix) }}
+			</div>
+			
+			<div class="form-group col-sm-3 ">
+				{{ form_widget(form.prix_Max) }}
+			</div>
+			
+			{{ form_widget(form._token) }}
+			</form >
+  </div>
+</div>
+
+
+</div>
+
+{% endblock form %}
+
+
+
+{% block body %}
+
+   
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-10">
+
+                <ul class="nav nav-tabs justified">
+                    <li class="active">
+                        <a href="#toutes" data-toggle="tab">Toutes</a>
+                    </li>
+                    <li>
+                        <a href="#particuliers" data-toggle="tab">Particuliers</a>
+                    </li>
+                    <li>
+                        <a href="#professionnels" data-toggle="tab" >Professionnels</a>       
+                    </li>
+                </ul>
+                
+				<div class="tab-content">
+                    <div id="toutes" class="tab-pane fade in active">
+
+					
+					<ul class="list-unstyled" >{% for tab in liste_annonces %}
+					<li class="media-trait">
+						<a class="list_item" href="{{ path('bk_platform_affich_annonce', {'id': tab.id }) }}" >
+						
+						
+						
+						<div class="item-image">						
+			
+							<span class="item_imagePic">                                         
+								<span class="lazyload loaded" style="display:block; width:100%; height:100%;" >
+									<img itemprop="image"  src="{{ asset( (tab.image.webPath)  ) }}" >
+								</span>                                          
+							</span>
+							
+							<span class="item_imageNumber">
+								<i class="icon-camera icon-2x nomargin"></i>
+								<span>2</span>
+							</span>
+								
+						</div>
+						  
+						<section class="item_infos">
+						<h2 class="item_title" itemprop="name">
+							{{ tab.titre }}
+						</h2>
+						
+						<p class="item_supp" itemprop="category" >   
+							{{ tab.category }}                 
+						</p> 
+						
+						<p class="item_supp" itemprop="availableAtOrFrom" --itemscope=--"--" --itemtype=--"http://schema.org/Place">         
+								
+							Buc /  
+							<!--meta itemprop="address" content="Buc"-->
+							{{ tab.ville }}
+							<!--meta itemprop="address" content="Yvelines"-->     
+						</p>
+						
+						<meta itemprop="priceCurrency" content="EUR">
+							<h3 class="item_price" itemprop="price" content="15">
+								{{ tab.prix }}&nbsp;FCFA
+							 </h3>
+								
+						<aside class="item_absolute">
+							<p class="item_supp" itemprop="availabilityStarts" content="2017-08-20">
+							   {{ tab.date|date('d M, H:i') }}
+							</p>
+						</aside>
+					</section>
+						  
+						  
+						  
+						  
+						</a>
+						
+						
+						
+					</li>
+					
+					
+					{% endfor %}
+					
+					</ul>
+					
+					
+				
+					
+                    </div>					
+					
+                    <div id="particuliers" class="tab-pane fade">
+                       
+                    </div>
+                    <div id="professionnels" class="tab-pane fade">
+                        
+                    </div>
+                   
+                </div>
+
+            </div>
+        </div>
+    </div>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+{% endblock body %}

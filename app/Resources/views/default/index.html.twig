@@ -1,0 +1,228 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+		
+		
+		<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+		<link rel="stylesheet" href="css/bootstrap-imgupload.css" >
+		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
+
+	
+		<link rel="stylesheet" href="{{ asset('css/modal.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/carousel.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/as.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/form_user.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/offres_accueil.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/profil.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/liste_offre.css') }}">
+		
+		
+		
+		
+		<meta charset="utf-8">
+		
+		
+
+	</head>
+  
+	<body>
+	
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+			<div class="container-fluid">
+				
+				<div class="navbar-header">
+					<a class="navbar-brand" href="{{ path('index')}}">BeninBiz</a>
+				</div>
+				
+				<ul class="nav navbar-nav navbar-center">
+				<li><a  href="{{ path('bk_platform_ajouter')}}">DEPOSER UNE ANNONCE</a></li>
+				<li><a  href="{{ path('bk_platform_offres')}}">OFFRES</a></li>
+				<li><a  href="{{ path('bk_platform_demandes')}}">DEMANDES</a></li>
+				<li><a  href="{{ path('bk_platform_mes_annonces')}}">MES ANNONCES</a></li>
+				<li><a >BOUTIQUES</a></li>
+
+				</ul>
+				
+				
+				{% if app.user == NULL %}
+					<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" data-toggle="modal" data-target="#login-modal"> SE CONNECTER</a></li>
+					</ul>
+				{% else %}
+			
+					
+					<div class="nav navbar-nav navbar-right dropdown">
+						<button class="btn btn-link dropdown-toggle"  data-toggle="dropdown" >
+						{{ app.user.nom }}
+						<span class="glyphicon glyphicon-user"></span>
+						</button>
+					
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="{{ path('bk_platform_profil')}}" title="Lien 1">Tableau de bord</a></li>
+							<li><a href="#" title="Lien 2">Mes alertes</a></li>
+							<li><a href="#" title="Lien 3">Mes annonces</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="/logout" title="Lien 4">Se déconnecter</a></li>
+						</ul>
+						</div>
+				{% endif %}
+				
+			
+			</div>	
+			
+		</nav>
+		
+	
+		
+
+		
+		
+	
+		
+	
+	{% block form %}
+    {% endblock %}
+  
+	{% block map %}
+    {% endblock %}
+
+    {% block body %}
+    {% endblock %}
+
+		
+		
+		
+		
+		
+		
+		
+
+
+<!-- BEGIN # MODAL LOGIN -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" align="center">
+					<img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+				</div>
+                
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form" action="{{ path('fos_user_security_check') }}" method="post">
+					<input type="hidden" name="_csrf_token"  value="{{ csrf_token('authenticate') }}" />
+		                <div class="modal-body">
+				    		<div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg">Type your username and password.</span>
+                            </div>
+							
+				    		<input id="login_username" name="_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+				    		<input id="login_password" name="_password" class="form-control" type="password" placeholder="Password" required>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"  name="_remember_me"> Remember me
+                                </label>
+                            </div>
+        		    	</div>
+				        <div class="modal-footer">
+                            <div>
+                                <button type="submit" name="_submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                            </div>
+				    	    <div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                                <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
+                            </div>
+				        </div>
+                    </form>
+					
+                    <!-- End # Login Form -->
+                    
+                    <!-- Begin | Lost Password Form -->
+					
+                    <form id="lost-form" style="display:none;" >
+    	    		    <div class="modal-body">
+		    				<div id="div-lost-msg">
+                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-lost-msg">Type your e-mail.</span>
+                            </div>
+		    				<input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" name="_submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                            </div>
+                            <div>
+                                <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Lost Password Form -->
+                    
+                    <!-- Begin | Register Form -->
+                    <form id="register-form" style="display:none;" action="{{ path('fos_user_registration_register') }}" method="post" class="fos_user_registration_register" role="form">
+						<input type="hidden" name="fos_user_registration_form[_token]"  value="B-sTdn72ROps94nMbZDM-8xD9tDrUIN2pQ1-EU6pAF8" />
+            		    <div class="modal-body">
+		    				<div id="div-register-msg">
+                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-register-msg">Register an account.</span>
+                            </div>
+							
+		    				<input id="register_username"  name="fos_user_registration_form[email]"                   class="form-control" type="email"    placeholder="Adresse e-mail" required>
+                            <input id="register_email"     name="fos_user_registration_form[username]"                class="form-control" type="text"     placeholder="Username" required>
+                            <input id="register_password"  name="fos_user_registration_form[plainPassword][first]"    class="form-control" type="password" placeholder="Password" required>
+							<input id="register_password"  name="fos_user_registration_form[plainPassword][second]"   class="form-control" type="password" placeholder="Repeat Password" required>
+							<input id="register_firstname" name="fos_user_registration_form[nom]"                     class="form-control" type="text"     placeholder="Nom" required>
+							<input id="register_lastname"  name="fos_user_registration_form[prenom]"                  class="form-control" type="text"     placeholder="Prenom" required>
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" name="_submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+                                <button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Register Form -->
+                    
+                </div>
+                <!-- End # DIV Form -->
+                
+			</div>
+		</div>
+	</div>
+    <!-- END # MODAL LOGIN -->
+		
+		
+		
+		
+		
+		
+	
+		<!--footer class="navbar-default navbar-fixed-bottom">
+		  <div class="container-fluid">
+			<span>Winning!</span>
+		  </div>
+		</footer-->
+	
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="http://davidlynch.org/js/maphilight/jquery.maphilight.min.js"></script>
+		<script src="/js/bootstrap.js"></script>
+		<script src="/js/modal.js"></script>
+		<script src="/js/offres_accueil.js"></script>
+		<script src="/js/profil.js"></script>
+		<script src="/js/autocomplete.js"></script>
+		
+		
+		
+  </body>
+</html>

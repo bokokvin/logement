@@ -1,0 +1,51 @@
+
+<html>
+  <head>
+  
+  </head>
+  
+<body>
+<div class="container">
+<div class="row">
+<form class="well" action="{{ path('fos_user_security_check') }}" method="post">
+    
+    <input type="hidden" name="_csrf_token"  value="{{ csrf_token('authenticate') }}" />
+    
+	<div class="form-group col-sm-3 box ">
+    <label for="username" class="form-label">{{ 'security.login.username'|trans }}</label>
+    <input type="text" id="username" name="_username"  required="required" class="form-control" />
+	</div>
+	
+	<div class="clearfix"></div>
+	
+	<div class="form-group col-sm-3 box">
+		<label for="password" class="form-label">{{ 'security.login.password'|trans }}</label>
+		<input type="password" id="password" name="_password" required="required" class="form-control" />
+	</div>
+	
+	
+	<div class="form-group col-sm-6 box">
+	</div>
+	
+	<div class="clearfix"></div>
+	
+	<div class="form-group col-sm-3 box">
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+		<label for="remember_me" class="form-label">{{ 'security.login.remember_me'|trans }}</label>
+	</div>
+	
+	<div class="clearfix"></div>
+	
+	<div class="form-group col-sm-3 ">
+				<input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" class="btn btn-block btn-primary"/>
+	</div>
+	
+	<div class="clearfix"></div>
+    
+</form>
+
+ </div>
+</div>
+
+</body>
+</html>

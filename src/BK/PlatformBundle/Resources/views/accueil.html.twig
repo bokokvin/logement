@@ -1,0 +1,162 @@
+{% extends "default/index.html.twig" %}
+
+{% block map %}
+	<!--link rel="stylesheet" href="{{ asset('css/form.css') }}">
+	
+	<script src="http://davidlynch.org/js/maphilight/jquery.maphilight.min.js"></script>
+	<script src="{{ asset('js/bootstrap_modal_7.js') }}"></script>
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+	
+	<script type="text/javascript">
+        $(function() {
+            $('.map').maphilight({fill:true,
+	fillColor:'FFFFFF'});
+			
+			$('#aliborilink')
+			.mouseover(function(e) {$('#alibori').mouseover();})
+			.mouseout(function(e) {$('#alibori').mouseout();})
+			.click(function(e) { e.preventDefault(); });
+			
+			$('#atacoralink')
+			.mouseover(function(e) {$('#atacora').mouseover();})
+			.mouseout(function(e) {$('#atacora').mouseout();})
+			.click(function(e) { e.preventDefault(); });
+			
+			$('#borgoulink')
+			.mouseover(function(e) {$('#borgou').mouseover();})
+			.mouseout(function(e) {$('#borgou').mouseout();})
+			.click(function(e) { e.preventDefault(); });
+			
+			$('#dongalink')
+			.mouseover(function(e) {$('#donga').mouseover();})
+			.mouseout(function(e) {$('#donga').mouseout();})
+			.click(function(e) { e.preventDefault(); });
+			
+			$('#collineslink')
+			.mouseover(function(e) {$('#collines').mouseover();})
+			.mouseout(function(e) {$('#collines').mouseout();})
+			.click(function(e) { e.preventDefault(); });
+			
+			$('#zoulink')
+			.mouseover(function(e) {$('#zou').mouseover();})
+			.mouseout(function(e) {$('#zou').mouseout();})
+			.click(function(e) { e.preventDefault(); });
+			
+			$('#kouffolink')
+			.mouseover(function(e) {$('#kouffo').mouseover();})
+			.mouseout(function(e) {$('#kouffo').mouseout();})
+			.click(function(e) { e.preventDefault(); });
+			
+			$('#monolink')
+			.mouseover(function(e) {$('#mono').mouseover();})
+			.mouseout(function(e) {$('#mono').mouseout();})
+			.click(function(e) { e.preventDefault(); });
+			
+			$('#plateauxlink')
+			.mouseover(function(e) {$('#plateaux').mouseover();})
+			.mouseout(function(e) {$('#plateaux').mouseout();})
+			.click(function(e) { e.preventDefault(); });
+			
+			$('#ouemelink')
+			.mouseover(function(e) {$('#oueme').mouseover();})
+			.mouseout(function(e) {$('#oueme').mouseout();})
+			.click(function(e) { e.preventDefault(); });
+			
+			$('#atlantiquelink')
+			.mouseover(function(e) {$('#atlantique').mouseover();})
+			.mouseout(function(e) {$('#atlantique').mouseout();})
+			.click(function(e) { e.preventDefault(); });
+			
+			$('#littorallink')
+			.mouseover(function(e) {$('#littoral').mouseover();})
+			.mouseout(function(e) {$('#littoral').mouseout();})
+			.click(function(e) { e.preventDefault(); });
+			
+        });
+
+		
+	</script>
+	
+	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4" id="navigation">
+				Trouvez la bonne affaire parmi 26 035 413 petites annonces sur beninbiz.
+				<br><br>
+				<div >
+					<a href="#" class="btn btn-block btn-primary "><span class="glyphicon glyphicon-pencil"></span>  Déposer une annonce</a>
+					<a href="#" class="btn btn-block btn-primary "><span class="glyphicon glyphicon-map-marker"></span>  Rechercher autour de moi</a>	
+				</div>
+				
+			</div>
+			
+			<div class="col-md-6" id="main-content">
+				<img class="map" src="/images/benin222.png"  usemap="#benin" />
+				<map name="benin">
+
+					<area id="alibori" shape="poly" coords="73,57,84,46,87,45,88,42,92,35,93,30,95,27,92,20,92,14,107,11,115,5,138,25,140,33,147,33,155,43,150,64,161,73,161,78,164,80,164,85,163,88,168,98,163,100,154,100,142,100,133,104,118,105,117,102,111,102,108,106,101,107,97,102,94,104,86,105,85,87,90,82,89,80,85,80,73,58" title="ALIBORI" href="{{ path('bk_platform_offres',  {'ville': 'alibori'})}}" data-maphilight='{"strokeWidth":2,"fillColor":"ff0000","fillOpacity":1, "strokeColor":"000000"}'/>
+					<area id="atacora" shape="poly" coords="73,58,85,79,90,81,85,86,85,105,81,110,86,124,84,128,62,129,60,127,52,134,37,134,7,112,8,105,9,94,12,91,14,82,18,76,25,78,23,72,27,71,26,66,32,65,34,63,36,63,37,61,39,56,49,55,49,59,53,59,57,57,70,57,72,58" title="ATACORA" target="ATACORA" href="{{ path('bk_platform_offres',  {'ville': 'atacora'})}}" data-maphilight='{"strokeWidth":2,"fillColor":"ff0000","fillOpacity":1, "strokeColor":"000000"}'/>
+					<area id="borgou" shape="poly" coords="168,99,165,112,158,109,154,120,159,124,155,129,155,134,152,140,147,140,142,142,141,146,143,149,141,151,138,151,131,163,132,171,129,180,112,182,111,198,82,198,80,196,72,192,73,181,71,178,70,168,77,166,79,151,76,147,75,139,76,128,85,127,86,123,86,120,81,110,85,105,92,105,96,103,102,106,107,106,111,102,115,102,119,105,129,105,141,100,162,99,166,98" title="BORGOU" href="{{ path('bk_platform_offres',  {'ville': 'borgou'})}}" data-maphilight='{"strokeWidth":2,"fillColor":"ff0000","fillOpacity":1, "strokeColor":"000000"}'/>
+					<area id="donga" shape="poly" coords="52,206,52,180,39,168,40,160,37,158,39,153,38,134,52,134,59,127,62,129,76,128,76,145,79,150,78,166,71,167,70,179,74,182,73,192,82,196,83,213,79,214,70,211,61,206,57,207,52,207,51,206,52,195" title="DONGA" href="{{ path('bk_platform_offres',  {'ville': 'donga'})}}" data-maphilight='{"strokeWidth":2,"fillColor":"ff0000","fillOpacity":1, "strokeColor":"000000"}'/>
+					<area id="collines" shape="poly" coords="53,258,53,221,51,216,54,213,52,207,60,206,79,213,83,213,83,197,111,198,112,214,108,218,107,221,110,229,109,243,107,246,108,251,109,257,98,258,96,258,97,262,93,268,86,263,77,262,65,258,54,258,53,258" title="COLLINES" href="{{ path('bk_platform_offres',  {'ville': 'collines'})}}" data-maphilight='{"strokeWidth":2,"fillColor":"ff0000","fillOpacity":1, "strokeColor":"000000"}'/>
+					<area id="plateaux" shape="poly" coords="109,314,109,310,112,307,112,303,110,304,110,295,108,294,111,289,110,270,112,269,113,266,110,263,108,258,96,258,96,261,96,263,93,267,95,277,99,282,101,292,99,299,103,306,104,314,109,315,110,310,112,308,112,307" title="PLATEAUX" href="{{ path('bk_platform_offres',  {'ville': 'plateaux'})}}" data-maphilight='{"strokeWidth":2,"fillColor":"ff0000","fillOpacity":1, "strokeColor":"000000"}'/>
+					<area id="zou" shape="poly" coords="53,257,53,264,62,280,65,281,64,285,74,297,93,291,100,292,100,283,95,278,93,268,85,263,78,262,65,258,53,257,53,262" title="ZOU" href="{{ path('bk_platform_offres',  {'ville': 'zou'})}}" data-maphilight='{"strokeWidth":2,"fillColor":"ff0000","fillOpacity":1, "strokeColor":"000000"}'/>
+					<area id="kouffo" shape="poly" coords="53,265,53,293,48,293,48,296,51,297,52,306,62,303,73,308,74,297,64,286,64,281,62,280,53,265,54,265" title="KOUFFO" href="{{ path('bk_platform_offres',  {'ville': 'kouffo'})}}" data-maphilight='{"strokeWidth":2,"fillColor":"ff0000","fillOpacity":1, "strokeColor":"000000"}'/>
+					<area id="mono" shape="poly" coords="53,332,60,330,70,328,70,326,69,322,71,319,70,312,72,309,67,307,63,303,49,308,51,310,51,312,56,317,61,329" title="MONO" href="{{ path('bk_platform_offres',  {'ville': 'mono'})}}" data-maphilight='{"strokeWidth":2,"fillColor":"ff0000","fillOpacity":1, "strokeColor":"000000"}'/>
+					<area id="atlantique" shape="poly" coords="70,328,89,326,90,324,96,322,98,320,94,318,94,301,90,296,92,292,74,297,72,308,70,312,70,319,69,323,70,325" title="ATLANTIQUE" href="{{ path('bk_platform_offres',  {'ville': 'atlantique'})}}" data-maphilight='{"strokeWidth":2,"fillColor":"ff0000","fillOpacity":1, "strokeColor":"000000"}'/>
+					<area id="oueme" shape="poly" coords="100,325,107,325,109,315,104,314,103,306,99,299,99,292,94,292,90,295,94,301,94,316,96,319,98,323,96,323,97,323" title="OUEME" href="{{ path('bk_platform_offres',  {'ville': 'oueme'})}}" data-maphilight='{"strokeWidth":2,"fillColor":"ff0000","fillOpacity":1, "strokeColor":"000000"}'/>
+					<area id="littoral" shape="poly" coords="88,326,100,326,97,321,92,323,88,326,91,326" title="LITTORAL" href="{{ path('bk_platform_offres',  {'ville': 'littoral'})}}" data-maphilight='{"strokeWidth":2,"fillColor":"ff0000","fillOpacity":1, "strokeColor":"000000"}'/>
+
+				</map>
+			</div>
+			
+			<div class="col-md-3" id="news">
+			<ul>
+				<li><a id="aliborilink" href="#">ALIBORI</a></li>
+				<li><a id="atacoralink" href="#">ATACORA</a></li>
+				<li><a id="borgoulink" href="#">BORGOU</a></li>
+				<li><a id="dongalink" href="#">DONGA</a></li>
+				<li><a id="collineslink" href="#">COLLINES</a></li>
+				<li><a id="plateauxlink" href="#">PLATEAUX</a></li>
+				<li><a id="zoulink" href="#">ZOU</a></li>
+				<li><a id="kouffolink" href="#">KOUFFO</a></li>
+				<li><a id="monolink" href="#">MONO</a></li>
+				<li><a id="atlantiquelink" href="#">ATLANTIQUE</a></li>
+				<li><a id="ouemelink" href="#">OUEME</a></li>
+				<li><a id="littorallink" href="#">LITTORAL</a></li>
+			</ul>
+			</div>
+			
+  </div>
+</div>
+
+
+</div-->
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+   
+{% endblock map %}

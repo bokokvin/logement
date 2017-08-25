@@ -1,0 +1,121 @@
+{% extends "default/index.html.twig" %}
+
+{% block form %}
+
+
+
+                      
+
+
+
+
+	
+
+		<div class="container">
+			<div class="row">
+				
+				<form class="form-horizontal" method="post" role="form" enctype="multipart/form-data">
+		
+						
+						<legend>Déposer une annonce</legend>
+						
+				
+								
+								
+								<div class="form-group">
+									{{ form_label(form.category,"Categorie" ,{'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+									<div class="col-sm-8">
+										{{ form_widget(form.category) }}
+									</div>
+								</div>
+								
+								
+								<div class="form-group">
+									{{ form_label(form.titre,"Titre de l'annonce" ,{'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+									<div class="col-sm-8">
+										{{ form_widget(form.titre) }}
+									</div>
+								</div>
+								
+								
+								<div class="form-group">
+									{{ form_label(form.texte,"Texte de l'annonce" ,{'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+									<div class="col-sm-8">
+										{{ form_widget(form.texte) }}
+									</div>
+								</div>
+								
+								<div class="form-group">
+									{{ form_label(form.prix,"Prix" ,{'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+									<div class="col-sm-8">
+										{{ form_widget(form.prix) }}
+									</div>
+								</div>
+								
+							
+							
+								
+								
+									<div class="form-group">
+										{{ form_label(form.detenteur,"Vous êtes un" ,{'label_attr': {'class': 'col-sm-2 col-xs-12 control-label'}}) }}
+										{{ form_widget(form.detenteur, { 'attr': {'class': 'checkbox inline no_indent'} }) }}	
+									</div>
+									
+									<div class="form-group">
+										{{ form_label(form.type,"Type" ,{'label_attr': {'class': 'col-sm-2 col-xs-12 control-label'}}) }}
+										{{ form_widget(form.type, { 'attr': {'class': 'checkbox inline no_indent'} }) }}	
+									</div>
+									
+									
+						
+								
+								
+						
+						
+						
+						
+						
+							
+							
+							   
+								
+								
+								
+								
+									<div class="form-group">
+									{{ form_label(form.ville,"Ville" ,{'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+									<div class="col-sm-8">
+										{{ form_widget(form.ville) }}
+									</div>
+									</div>
+								
+								
+									<div class="form-group">
+									{{ form_label(form.adresse,"Adresse" ,{'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+									<div class="col-sm-8">
+										{{ form_widget(form.adresse) }}
+									</div>
+									</div>
+									
+									
+									
+								
+
+							
+			
+			{{ form_rest(form)}}
+			{{ form_widget(form._token) }}
+			
+			</form >
+		</div>
+		</div>
+		
+
+
+{% endblock form %}

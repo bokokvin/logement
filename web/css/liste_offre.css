@@ -1,0 +1,134 @@
+.tab-content {
+    border: 1px solid #ccc;
+    margin-top: -1px;
+    margin-top: -.1rem;
+}
+
+.list_item {
+    position: relative;
+    display: block;
+    padding: 15px;
+    padding: 1.5rem;
+    border-bottom: 1px solid #ccc;
+    -webkit-transition: background,0.3s;
+    -moz-transition: background,0.3s;
+    transition: background,0.3s;
+    overflow: hidden;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.item_imageNumber i {
+    color: #fff;
+}
+
+.item_imageNumber {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+}
+
+i.nomargin {
+    margin-right: 0;
+}
+
+.icon-2x {
+    font-size: 20px;
+    font-size: 2rem;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -1px;
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 14px;
+    font-size: 1.4rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+img {
+    max-width: 100%;
+	vertical-align: middle;
+}
+
+:not(.gm-style) img {
+    height: auto;
+}
+
+.item_imagePic {
+    display: block;
+    height: 100%;
+    min-height: 120px;
+    text-align: center;
+    line-height: 120px;
+}
+
+.item-image {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 25%;
+    min-width: 130px;
+    min-height: 120px;
+    max-height: 100%;
+    background: #f2f2f2;
+}
+
+.item_infos {
+    position: relative;
+    float: left;
+    width: 75%;
+ /*   padding: 0 0 0 20px;*/
+    padding: 0 0 0 2rem;
+}
+
+h2:first-child, .h2-like:first-child, h3:first-child, .h3-like:first-child, h4:first-child, .h4-like:first-child, h5:first-child, .h5-like:first-child, h6:first-child, .h6-like:first-child {
+    margin-top: 0;
+}
+
+.item_price {
+    margin: 10px 0 0 0;
+    margin: 1rem 0 0 0;
+    font-size: 20px;
+    font-size: 2rem;
+    color: #f56b2a;
+    font-family: "OpenSansBold",sans-serif;
+}
+
+.item_absolute {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.item_supp {
+    color: #1a1a1a;
+}
+.text-center {
+    text-align: center;
+}
+
+.media-trait a{
+	background-color:white;
+	}
+	
+.media-trait a:hover{
+background-color:yellow;
+
+}
